@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<calaos:widgets xmlns:calaos="http://www.calaos.fr">
+  <calaos:widget id="0" type="../calaos_modules/build/default/widget_clock/module.so" posx="50" posy="91" width="115" height="115"/>
+  <calaos:widget id="1" type="../calaos_modules/build/default/widget_note/module.so" posx="170" posy="34" width="246" height="216"/>
+  <calaos:widget id="2" type="../calaos_modules/build/default/widget_note/module.so" posx="402" posy="135" width="206" height="151"/>
+  <calaos:widget id="3" type="../calaos_modules/build/default/widget_blague_du_jour/module.so" posx="686" posy="50" width="290" height="75"/>
+  <calaos:widget id="4" type="../calaos_modules/build/default/widget_le_saviez_vous/module.so" posx="38" posy="350" width="278" height="200"/>
+  <calaos:widget id="5" type="../calaos_modules/build/default/widget_pensee_du_jour/module.so" posx="691" posy="213" width="278" height="160"/>
+  <calaos:widget id="6" type="../calaos_modules/build/default/widget_flickr/module.so" posx="50" posy="50" width="200" height="191"/>
+</calaos:widgets>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<calaos:rules xmlns:calaos="http://www.calaos.fr">
+  <calaos:rule name="test" type="volet">
+    <calaos:condition>
+      <calaos:input id="input_0" oper="==" val="true"/>
+    </calaos:condition>
+    <calaos:action>
+      <calaos:output id="output_0" val="impulse 200"/>
+    </calaos:action>
+  </calaos:rule>
+  <calaos:rule name="test2" type="volet">
+    <calaos:condition>
+      <calaos:input id="input_1" oper="==" val="true"/>
+    </calaos:condition>
+    <calaos:action>
+      <calaos:output id="output_1" val="impulse 150"/>
+    </calaos:action>
+  </calaos:rule>
+</calaos:rules>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<calaos:rules xmlns:calaos="http://www.calaos.fr">
+    <calaos:rule name="chauffage on jour SaM" type="Cuisine - Salle à manger" specialType="">
+        <calaos:condition type="standard">
+            <calaos:input id="input_1" oper="INF=" val="" val_var="intern_1"/>
+        </calaos:condition>
+        <calaos:condition type="standard">
+            <calaos:input id="intern_0" oper="==" val="true"/>
+        </calaos:condition>
+        <calaos:action type="script">
+            <calaos:script type="lua"><![CDATA[calaos:requestUrl("http://192.168.0.3/preset.htm?led1=1")
+return true]]></calaos:script>
+        </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="intern_3" val="true"/>
+        </calaos:action>
+    </calaos:rule>
+    <calaos:rule name="chauffage off jour SaM" type="Cuisine - Salle à manger" specialType="">
+        <calaos:condition type="standard">
+            <calaos:input id="input_1" oper="SUP" val="" val_var="intern_1"/>
+        </calaos:condition>
+        <calaos:condition type="standard">
+            <calaos:input id="intern_0" oper="==" val="true"/>
+        </calaos:condition>
+        <calaos:action type="script">
+            <calaos:script type="lua"><![CDATA[calaos:requestUrl("http://192.168.0.3/preset.htm?led1=0")
+return true]]></calaos:script>
+        </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="intern_3" val="false"/>
+        </calaos:action>
+    </calaos:rule>
+    <calaos:rule name="chauffage on nuit SaM" type="Cuisine - Salle à manger" specialType="">
+        <calaos:condition type="standard">
+            <calaos:input id="input_1" oper="INF=" val="" val_var="intern_2"/>
+        </calaos:condition>
+        <calaos:condition type="standard">
+            <calaos:input id="intern_0" oper="==" val="false"/>
+        </calaos:condition>
+        <calaos:action type="script">
+            <calaos:script type="lua"><![CDATA[calaos:requestUrl("http://192.168.0.3/preset.htm?led1=1")
+return true]]></calaos:script>
+        </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="intern_3" val="true"/>
+        </calaos:action>
+    </calaos:rule>
+    <calaos:rule name="chauffage off nuit SaM" type="Cuisine - Salle à manger" specialType="">
+        <calaos:condition type="standard">
+            <calaos:input id="input_1" oper="SUP" val="" val_var="intern_2"/>
+        </calaos:condition>
+        <calaos:condition type="standard">
+            <calaos:input id="intern_0" oper="==" val="false"/>
+        </calaos:condition>
+        <calaos:action type="script">
+            <calaos:script type="lua"><![CDATA[calaos:requestUrl("http://192.168.0.3/preset.htm?led1=0")
+return true]]></calaos:script>
+        </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="intern_3" val="false"/>
+        </calaos:action>
+    </calaos:rule>
+    <calaos:rule name="chauffage on jour Salon" type="Salon" specialType="">
+        <calaos:condition type="standard">
+            <calaos:input id="input_2" oper="INF=" val="" val_var="intern_4"/>
+        </calaos:condition>
+        <calaos:condition type="standard">
+            <calaos:input id="intern_0" oper="==" val="true"/>
+        </calaos:condition>
+    </calaos:rule>
+    <calaos:rule name="chauffage off jour Salon" type="Salon" specialType="">
+        <calaos:condition type="standard">
+            <calaos:input id="input_2" oper="SUP" val="" val_var="intern_4"/>
+        </calaos:condition>
+        <calaos:condition type="standard">
+            <calaos:input id="intern_0" oper="==" val="true"/>
+        </calaos:condition>
+    </calaos:rule>
+    <calaos:rule name="chauffage on nuit Salon" type="Salon" specialType="">
+        <calaos:condition type="standard">
+            <calaos:input id="input_2" oper="INF=" val="" val_var="intern_5"/>
+        </calaos:condition>
+        <calaos:condition type="standard">
+            <calaos:input id="intern_0" oper="==" val="false"/>
+        </calaos:condition>
+    </calaos:rule>
+    <calaos:rule name="chauffage off nuit Salon" type="Salon" specialType="">
+        <calaos:condition type="standard">
+            <calaos:input id="input_2" oper="SUP" val="" val_var="intern_5"/>
+        </calaos:condition>
+        <calaos:condition type="standard">
+            <calaos:input id="intern_0" oper="==" val="false"/>
+        </calaos:condition>
+    </calaos:rule>
+    <calaos:rule name="chauffage on jour Chambres 1er Etage" type="Chambres 1er étage" specialType="">
+        <calaos:condition type="standard">
+            <calaos:input id="input_3" oper="INF=" val="" val_var="intern_7"/>
+        </calaos:condition>
+        <calaos:condition type="standard">
+            <calaos:input id="intern_0" oper="==" val="true"/>
+        </calaos:condition>
+    </calaos:rule>
+    <calaos:rule name="chauffage off jour Chambres 1er Etage" type="Chambres 1er étage" specialType="">
+        <calaos:condition type="standard">
+            <calaos:input id="input_3" oper="SUP" val="" val_var="intern_7"/>
+        </calaos:condition>
+        <calaos:condition type="standard">
+            <calaos:input id="intern_0" oper="==" val="true"/>
+        </calaos:condition>
+    </calaos:rule>
+    <calaos:rule name="chauffage on nuit Chambres 1er Etage" type="Chambres 1er étage" specialType="">
+        <calaos:condition type="standard">
+            <calaos:input id="input_3" oper="INF=" val="" val_var="intern_8"/>
+        </calaos:condition>
+        <calaos:condition type="standard">
+            <calaos:input id="intern_0" oper="==" val="false"/>
+        </calaos:condition>
+    </calaos:rule>
+    <calaos:rule name="chauffage off nuit Chambres 1er Etage" type="Chambres 1er étage" specialType="">
+        <calaos:condition type="standard">
+            <calaos:input id="input_3" oper="SUP" val="" val_var="intern_8"/>
+        </calaos:condition>
+        <calaos:condition type="standard">
+            <calaos:input id="intern_0" oper="==" val="false"/>
+        </calaos:condition>
+    </calaos:rule>
+    <calaos:rule name="chauffage on jour Chambre sous-sol" type="Chambre sous-sol" specialType="">
+        <calaos:condition type="standard">
+            <calaos:input id="input_4" oper="INF=" val="" val_var="intern_10"/>
+        </calaos:condition>
+        <calaos:condition type="standard">
+            <calaos:input id="intern_0" oper="==" val="true"/>
+        </calaos:condition>
+    </calaos:rule>
+    <calaos:rule name="chauffage off jour Chambre sous-sol" type="Chambre sous-sol" specialType="">
+        <calaos:condition type="standard">
+            <calaos:input id="input_4" oper="SUP" val="" val_var="intern_10"/>
+        </calaos:condition>
+        <calaos:condition type="standard">
+            <calaos:input id="intern_0" oper="==" val="true"/>
+        </calaos:condition>
+    </calaos:rule>
+    <calaos:rule name="chauffage on nuit Chanbre sous-sol" type="Chambre sous-sol" specialType="">
+        <calaos:condition type="standard">
+            <calaos:input id="input_4" oper="INF=" val="" val_var="intern_11"/>
+        </calaos:condition>
+        <calaos:condition type="standard">
+            <calaos:input id="intern_0" oper="==" val="false"/>
+        </calaos:condition>
+    </calaos:rule>
+    <calaos:rule name="chauffage off nuit Chambre sous-sol" type="Chambre sous-sol" specialType="">
+        <calaos:condition type="standard">
+            <calaos:input id="input_4" oper="SUP" val="" val_var="intern_11"/>
+        </calaos:condition>
+        <calaos:condition type="standard">
+            <calaos:input id="intern_0" oper="==" val="false"/>
+        </calaos:condition>
+    </calaos:rule>
+    <calaos:rule name="Indicateur chauffe SaM" type="Cuisine - Salle à manger" specialType=""/>
+    <calaos:rule name="Plage Horraire" type="Cuisine - Salle à manger" specialType="">
+        <calaos:condition type="standard">
+            <calaos:input id="input_6" oper="==" val="true"/>
+        </calaos:condition>
+        <calaos:action type="standard">
+            <calaos:output id="intern_0" val="true"/>
+        </calaos:action>
+    </calaos:rule>
+    <calaos:rule name="Mettre la maison en veille" type="Général" specialType="">
+        <calaos:condition type="standard">
+            <calaos:input id="intern_6" oper="==" val="true"/>
+        </calaos:condition>
+        <calaos:action type="standard">
+            <calaos:output id="intern_1" val="4" val_var="intern_9"/>
+        </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="intern_2" val="4" val_var="intern_9"/>
+        </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="intern_4" val="" val_var="intern_9"/>
+        </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="intern_5" val="" val_var="intern_9"/>
+        </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="intern_7" val="" val_var="intern_9"/>
+        </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="intern_8" val="" val_var="intern_9"/>
+        </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="intern_10" val="" val_var="intern_9"/>
+        </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="intern_11" val="" val_var="intern_9"/>
+        </calaos:action>
+    </calaos:rule>
+    <calaos:rule name="Mettre la maison en chauffe" type="Général" specialType="">
+        <calaos:condition type="standard">
+            <calaos:input id="intern_6" oper="==" val="false"/>
+        </calaos:condition>
+        <calaos:action type="standard">
+            <calaos:output id="intern_1" val="20"/>
+        </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="intern_2" val="16"/>
+        </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="intern_4" val="20"/>
+        </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="intern_5" val="16"/>
+        </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="intern_7" val="20"/>
+        </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="intern_8" val="16"/>
+        </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="intern_10" val="20"/>
+        </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="intern_11" val="16"/>
+        </calaos:action>
+    </calaos:rule>
+</calaos:rules>

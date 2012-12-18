@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<calaos:ioconfig xmlns:calaos="http://www.calaos.fr">
+    <calaos:home>
+        <calaos:room name="Cuisine - Salle à manger" type="sam" hits="0">
+            <calaos:input chauffage_id="1" host="10.0.0.123" id="input_1" name="Température Salle à Manger" ow_args="-u" ow_id="28.2A438B030000" port="502" time="60" type="OWTemp" var="0"/>
+            <calaos:internal id="intern_0" name="Jour/Nuit" rw="false" save="false" type="InternalBool" value="false" visible="true"/>
+            <calaos:internal chauffage_id="0" id="intern_1" name="Consigne jour SàM" rw="true" save="true" type="InternalInt" value="20" var_save="true" visible="true"/>
+            <calaos:internal chauffage_id="1" id="intern_2" name="Consigne nuit SàM" rw="true" save="true" type="InternalInt" value="20" var_save="true" visible="true"/>
+            <calaos:internal id="intern_3" name="Indicateur Chauffe SaM" rw="false" save="true" type="InternalBool" value="false" visible="true"/>
+        </calaos:room>
+        <calaos:room name="Salon" type="salon" hits="0">
+            <calaos:input chauffage_id="2" host="10.0.0.123" id="input_2" name="Température Salon" ow_args="-u" ow_id="28.40588B030000" port="502" time="60" type="OWTemp" var="0"/>
+            <calaos:internal chauffage_id="2" id="intern_4" name="Consigne jour Salon" rw="true" save="true" type="InternalInt" value="20" var_save="true" visible="true"/>
+            <calaos:internal chauffage_id="2" id="intern_5" name="Consigne nuit Salon" rw="true" save="true" type="InternalInt" value="20" var_save="true" visible="true"/>
+        </calaos:room>
+        <calaos:room name="Chambres 1er étage" type="chambre" hits="0">
+            <calaos:input chauffage_id="3" host="10.0.0.123" id="input_3" name="Température Chambre 1er Etage" ow_args="-u" ow_id="28.9D3C8B030000" port="502" time="60" type="OWTemp" var="0"/>
+            <calaos:internal chauffage_id="3" id="intern_7" name="Consigne jour Chambre 1er étage" rw="true" save="true" type="InternalInt" value="20" var_save="true" visible="true"/>
+            <calaos:internal chauffage_id="3" id="intern_8" name="Consigne nuit Chambre 1er étage" rw="true" save="true" type="InternalInt" value="20" var_save="true" visible="true"/>
+        </calaos:room>
+        <calaos:room name="Chambre sous-sol" type="chambre" hits="0">
+            <calaos:input chauffage_id="4" host="10.0.0.123" id="input_4" name="Température Chambre sous-sol" ow_args="-u" ow_id="28.82568B030000" port="502" time="60" type="OWTemp" var="0"/>
+            <calaos:internal chauffage_id="4" id="intern_10" name="Consigne jour Chambre sous-sol" rw="true" save="true" type="InternalInt" value="20" var_save="true" visible="true"/>
+            <calaos:internal chauffage_id="4" id="intern_11" name="Consigne nuit Chambre sous-sol" rw="true" save="true" type="InternalInt" value="20" var_save="true" visible="true"/>
+        </calaos:room>
+        <calaos:room name="Général" type="garage" hits="0">
+            <calaos:internal id="intern_6" name="Maison en veille" rw="true" save="true" type="InternalBool" value="false" visible="true"/>
+            <calaos:internal id="intern_9" name="Température Veille" rw="true" save="true" type="InternalInt" value="4" visible="true"/>
+            <calaos:input host="10.0.0.123" id="input_6" name="Plage Horraire" port="502" type="InPlageHoraire" var="0" visible="true">
+                <calaos:lundi>
+                    <calaos:plage start_hour="8" start_min="0" start_sec="0" end_hour="23" end_min="0" end_sec="0"/>
+                </calaos:lundi>
+                <calaos:mardi>
+                    <calaos:plage start_hour="8" start_min="0" start_sec="0" end_hour="23" end_min="0" end_sec="0"/>
+                </calaos:mardi>
+                <calaos:mercredi>
+                    <calaos:plage start_hour="8" start_min="0" start_sec="0" end_hour="23" end_min="0" end_sec="0"/>
+                </calaos:mercredi>
+                <calaos:jeudi>
+                    <calaos:plage start_hour="8" start_min="0" start_sec="0" end_hour="23" end_min="0" end_sec="0"/>
+                </calaos:jeudi>
+                <calaos:vendredi>
+                    <calaos:plage start_hour="8" start_min="0" start_sec="0" end_hour="23" end_min="0" end_sec="0"/>
+                </calaos:vendredi>
+                <calaos:samedi>
+                    <calaos:plage start_hour="8" start_min="0" start_sec="0" end_hour="23" end_min="0" end_sec="0"/>
+                </calaos:samedi>
+                <calaos:dimanche>
+                    <calaos:plage start_hour="8" start_min="0" start_sec="0" end_hour="23" end_min="0" end_sec="0"/>
+                </calaos:dimanche>
+            </calaos:input>
+            <calaos:input host="10.0.0.123" id="input_7" name="Température Jarvis" ow_args="-u" ow_id="28.DC95C3010000" port="502" time="60" type="OWTemp" var="0"/>
+        </calaos:room>
+    </calaos:home>
+</calaos:ioconfig>
