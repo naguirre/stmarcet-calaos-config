@@ -1,77 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <calaos:rules xmlns:calaos="http://www.calaos.fr">
-    <calaos:rule name="Indicateur chauffe SaM" type="Cuisine - Salle à manger" specialType=""/>
-    <calaos:rule name="Allumer Chauffage Salle à Manger" type="Cuisine - Salle à manger" specialType="">
+    <calaos:rule name="Plages horraire chauffage on" type="Bar" specialType="">
         <calaos:condition type="standard">
-            <calaos:input id="intern_0" oper="==" val="true"/>
+            <calaos:input id="input_3" oper="==" val="true"/>
         </calaos:condition>
-        <calaos:action type="script">
-            <calaos:script type="lua"><![CDATA[calaos:requestUrl("http://192.168.0.3/preset.htm?led4=1")
-return true]]></calaos:script>
+        <calaos:action type="standard">
+            <calaos:output id="output_0" val="true"/>
+        </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="intern_0" val="" val_var="output_0"/>
         </calaos:action>
     </calaos:rule>
-    <calaos:rule name="Eteindre Chauffage Salle à Manger" type="Cuisine - Salle à manger" specialType="">
+    <calaos:rule name="Plages horraire chauffage off" type="Bar" specialType="">
         <calaos:condition type="standard">
-            <calaos:input id="intern_0" oper="==" val="false"/>
+            <calaos:input id="input_3" oper="==" val="false"/>
         </calaos:condition>
-        <calaos:action type="script">
-            <calaos:script type="lua"><![CDATA[calaos:requestUrl("http://192.168.0.3/preset.htm?led4=0")
-return true
-]]></calaos:script>
+        <calaos:action type="standard">
+            <calaos:output id="output_0" val="false"/>
         </calaos:action>
-    </calaos:rule>
-    <calaos:rule name="Allumer chauffage Salon" type="Salon" specialType="">
-        <calaos:condition type="standard">
-            <calaos:input id="intern_1" oper="==" val="true"/>
-        </calaos:condition>
-        <calaos:action type="script">
-            <calaos:script type="lua"><![CDATA[calaos:requestUrl("http://192.168.0.3/preset.htm?led2=1")
-return true]]></calaos:script>
-        </calaos:action>
-    </calaos:rule>
-    <calaos:rule name="Eteindre Chauffage Salon" type="Salon" specialType="">
-        <calaos:condition type="standard">
-            <calaos:input id="intern_1" oper="==" val="false"/>
-        </calaos:condition>
-        <calaos:action type="script">
-            <calaos:script type="lua"><![CDATA[calaos:requestUrl("http://192.168.0.3/preset.htm?led2=0")
-return true]]></calaos:script>
-        </calaos:action>
-    </calaos:rule>
-    <calaos:rule name="Allumer Chauffage 1er étage" type="Chambres 1er étage" specialType="">
-        <calaos:condition type="standard">
-            <calaos:input id="intern_2" oper="==" val="true"/>
-        </calaos:condition>
-        <calaos:action type="script">
-            <calaos:script type="lua"><![CDATA[calaos:requestUrl("http://192.168.0.3/preset.htm?led3=1")
-return true]]></calaos:script>
-        </calaos:action>
-    </calaos:rule>
-    <calaos:rule name="Eteindre Chauffage 1er étage" type="Chambres 1er étage" specialType="">
-        <calaos:condition type="standard">
-            <calaos:input id="intern_2" oper="==" val="false"/>
-        </calaos:condition>
-        <calaos:action type="script">
-            <calaos:script type="lua"><![CDATA[calaos:requestUrl("http://192.168.0.3/preset.htm?led3=0")
-return true]]></calaos:script>
-        </calaos:action>
-    </calaos:rule>
-    <calaos:rule name="Allumer chauffage chambre sous-sol" type="Chambre Sous-Sol" specialType="">
-        <calaos:condition type="standard">
-            <calaos:input id="intern_3" oper="==" val="true"/>
-        </calaos:condition>
-        <calaos:action type="script">
-            <calaos:script type="lua"><![CDATA[calaos:requestUrl("http://192.168.0.3/preset.htm?led1=1")
-return true]]></calaos:script>
-        </calaos:action>
-    </calaos:rule>
-    <calaos:rule name="Eterindre chauffage chambre sous-sol" type="Chambre Sous-Sol" specialType="">
-        <calaos:condition type="standard">
-            <calaos:input id="intern_3" oper="==" val="false"/>
-        </calaos:condition>
-        <calaos:action type="script">
-            <calaos:script type="lua"><![CDATA[calaos:requestUrl("http://192.168.0.3/preset.htm?led1=0")
-return true]]></calaos:script>
+        <calaos:action type="standard">
+            <calaos:output id="intern_0" val="" val_var="output_0"/>
         </calaos:action>
     </calaos:rule>
 </calaos:rules>

@@ -1,24 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <calaos:ioconfig xmlns:calaos="http://www.calaos.fr">
     <calaos:home>
-        <calaos:room name="Cuisine - Salle à manger" type="sam" hits="0">
-            <calaos:input chauffage_id="1" id="input_1" logged="true" name="Température Salle à Manger" ow_args="-u" ow_id="28.2A438B030000" time="60" type="OWTemp" var="0"/>
-            <calaos:internal id="intern_0" name="Chauffage Salle à manger" rw="true" save="true" type="InternalBool" value="false" visible="true"/>
+        <calaos:room name="Bar" type="cuisine" hits="0">
+            <calaos:input chauffage_id="0" gtype="temp" gui_type="temp" host="10.0.0.123" id="input_1" logged="true" name="Température Rpi" ow_args="--w1" ow_id="28.5BB6B4040000" port="502" time="60" type="OWTemp" var="0" visible="true"/>
+            <calaos:input chauffage_id="0" gtype="temp" gui_type="temp" host="10.0.0.123" id="input_4" logged="true" name="Température Bar" ow_args="--w1" ow_id="28.A691B4040000" port="502" time="60" type="OWTemp" var="0" visible="true"/>
+            <calaos:input host="10.0.0.123" id="input_3" name="Plages horraire chauffage" port="502" type="InPlageHoraire" var="0">
+                <calaos:lundi>
+                    <calaos:plage start_hour="6" start_min="0" start_sec="0" end_hour="8" end_min="30" end_sec="0"/>
+                    <calaos:plage start_hour="18" start_min="0" start_sec="0" end_hour="23" end_min="59" end_sec="0"/>
+                </calaos:lundi>
+                <calaos:mardi>
+                    <calaos:plage start_hour="6" start_min="0" start_sec="0" end_hour="8" end_min="30" end_sec="0"/>
+                    <calaos:plage start_hour="18" start_min="0" start_sec="0" end_hour="23" end_min="59" end_sec="0"/>
+                </calaos:mardi>
+                <calaos:mercredi>
+                    <calaos:plage start_hour="6" start_min="0" start_sec="0" end_hour="8" end_min="30" end_sec="0"/>
+                    <calaos:plage start_hour="18" start_min="0" start_sec="0" end_hour="23" end_min="59" end_sec="0"/>
+                </calaos:mercredi>
+                <calaos:jeudi>
+                    <calaos:plage start_hour="6" start_min="0" start_sec="0" end_hour="8" end_min="30" end_sec="0"/>
+                    <calaos:plage start_hour="18" start_min="0" start_sec="0" end_hour="23" end_min="59" end_sec="0"/>
+                </calaos:jeudi>
+                <calaos:vendredi>
+                    <calaos:plage start_hour="6" start_min="0" start_sec="0" end_hour="8" end_min="30" end_sec="0"/>
+                    <calaos:plage start_hour="18" start_min="0" start_sec="0" end_hour="23" end_min="59" end_sec="0"/>
+                </calaos:vendredi>
+                <calaos:samedi>
+                    <calaos:plage start_hour="8" start_min="0" start_sec="0" end_hour="23" end_min="59" end_sec="0"/>
+                </calaos:samedi>
+                <calaos:dimanche>
+                    <calaos:plage start_hour="8" start_min="0" start_sec="0" end_hour="23" end_min="59" end_sec="0"/>
+                </calaos:dimanche>
+            </calaos:input>
+            <calaos:internal id="intern_0" name="Chauffage" rw="false" save="false" type="InternalBool" value="false" visible="true"/>
+            <calaos:output gpio="23" gtype="light" gui_type="light" host="10.0.0.123" id="output_0" name="Chaudiere" port="502" type="GpioOutputSwitch" var="0" visible="false"/>
         </calaos:room>
         <calaos:room name="Salon" type="salon" hits="0">
-            <calaos:input id="input_0" name="Température Salon" ow_args="-u" ow_id="28.40588B030000" time="60" type="OWTemp" var="0"/>
-            <calaos:internal id="intern_1" name="Chauffage Salon" rw="true" save="true" type="InternalBool" value="true" visible="true"/>
+            <calaos:audio host="192.168.1.5" id="00:04:20:23:17:c6" iid="input_2" name="Salon" oid="output_2" port="9090" type="slim"/>
         </calaos:room>
-        <calaos:room name="Chambres 1er étage" type="chambre" hits="0">
-            <calaos:input id="input_2" name="Température Chambre 1er étage" ow_args="-u" ow_id="28.9D3C8B030000" time="60" type="OWTemp" var="0"/>
-            <calaos:internal id="intern_2" name="Chauffage Chambres 1er etage" rw="true" save="true" type="InternalBool" value="true" visible="true"/>
-        </calaos:room>
-        <calaos:room name="Chambre Sous-Sol" type="salon" hits="0">
-            <calaos:input id="input_3" name="Température Chambre Sous-Sol" ow_args="-u" ow_id="28.82568B030000" time="60" type="OWTemp" var="0"/>
-            <calaos:internal id="intern_3" name="Chauffage Chambre Sous-Sol" rw="true" save="true" type="InternalBool" value="true" visible="true"/>
-        </calaos:room>
-        <calaos:room name="Chai" type="cave" hits="0">
-            <calaos:input id="input_4" name="Température Chai" ow_args="-u" ow_id="28.DC95C3010000" time="60" type="OWTemp" var="0"/>
+        <calaos:room name="Chambre" type="chambre" hits="0">
+            <calaos:audio host="192.168.1.5" id="00:04:20:26:27:0c" iid="input_0" name="Squeezebox Radio" oid="output_1" port="9090" type="slim"/>
         </calaos:room>
     </calaos:home>
 </calaos:ioconfig>

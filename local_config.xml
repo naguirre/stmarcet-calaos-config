@@ -3,10 +3,10 @@
         <calaos:option name="update_url" value="10.0.0.1/firmware/fwupdate.xml"/>
         <calaos:option name="fw_target" value="calaos_tss"/>
         <calaos:option name="fw_version" value="1.2"/>
-        <calaos:option name="calaos_user" value="alex"/>
-        <calaos:option name="calaos_password" value="qt4biasd"/>
+        <calaos:option name="calaos_user" value="nico"/>
+        <calaos:option name="calaos_password" value="xxxxxxxx"/>
         <calaos:option name="show_cursor" value="false"/>
-        <calaos:option name="use_ntp" value="false"/>
+        <calaos:option name="use_ntp" value="true"/>
         <calaos:option name="ntp_server" value="europe.pool.ntp.org"/>
         <calaos:option name="evas_engine" value="software"/>
         <calaos:option name="touchscreen_driver" value="eGALAX"/>
