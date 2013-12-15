@@ -1,41 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <calaos:rules xmlns:calaos="http://www.calaos.fr">
-    <calaos:rule name="Plages horraire chauffage on" specialType="" type="Bar">
+    <calaos:rule name="chauffage on" type="Bar" specialType="">
         <calaos:condition type="standard">
-            <calaos:input id="input_3" oper="==" val="true" />
+            <calaos:input id="input_4" oper="INF=" val="" val_var="intern_0"/>
         </calaos:condition>
         <calaos:action type="standard">
-            <calaos:output id="intern_1" val="" val_var="intern_2" />
+            <calaos:output id="output_0" val="true"/>
         </calaos:action>
     </calaos:rule>
-    <calaos:rule name="Plages horraire chauffage off" specialType="" type="Bar">
+    <calaos:rule name="chauffage off" type="Bar" specialType="">
         <calaos:condition type="standard">
-            <calaos:input id="input_3" oper="==" val="false" />
+            <calaos:input id="input_4" oper="SUP" val="" val_var="intern_0"/>
         </calaos:condition>
         <calaos:action type="standard">
-            <calaos:output id="intern_1" val="" val_var="intern_3" />
-        </calaos:action>
-    </calaos:rule>
-    <calaos:rule name="chauffage on" specialType="" type="Bar">
-        <calaos:condition type="standard">
-            <calaos:input id="input_4" oper="INF=" val="" val_var="intern_1" />
-        </calaos:condition>
-        <calaos:action type="standard">
-            <calaos:output id="intern_0" val="true" />
-        </calaos:action>
-        <calaos:action type="standard">
-            <calaos:output id="output_0" val="true" />
-        </calaos:action>
-    </calaos:rule>
-    <calaos:rule name="chauffage off" specialType="" type="Bar">
-        <calaos:condition type="standard">
-            <calaos:input id="input_4" oper="SUP" val="" val_var="intern_1" />
-        </calaos:condition>
-        <calaos:action type="standard">
-            <calaos:output id="intern_0" val="false" />
-        </calaos:action>
-        <calaos:action type="standard">
-            <calaos:output id="output_0" val="false" />
+            <calaos:output id="output_0" val="false"/>
         </calaos:action>
     </calaos:rule>
 </calaos:rules>
