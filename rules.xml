@@ -32,4 +32,26 @@
             <calaos:output id="intern_0" val="" val_var="intern_2" />
         </calaos:action>
     </calaos:rule>
+    <calaos:rule name="Changement consigne jour" specialType="" type="Bar">
+        <calaos:condition type="standard">
+            <calaos:input id="input_3" oper="==" val="true" />
+        </calaos:condition>
+        <calaos:condition type="output">
+            <calaos:output id="intern_1" oper="==" val="changed" />
+        </calaos:condition>
+        <calaos:action type="standard">
+            <calaos:output id="intern_0" val="" val_var="intern_1" />
+        </calaos:action>
+    </calaos:rule>
+    <calaos:rule name="Changement consigne nuit" specialType="" type="Bar">
+        <calaos:condition type="standard">
+            <calaos:input id="input_3" oper="==" val="false" />
+        </calaos:condition>
+        <calaos:condition type="output">
+            <calaos:output id="intern_2" oper="==" val="changed" />
+        </calaos:condition>
+        <calaos:action type="standard">
+            <calaos:output id="intern_0" val="" val_var="intern_2" />
+        </calaos:action>
+    </calaos:rule>
 </calaos:rules>
