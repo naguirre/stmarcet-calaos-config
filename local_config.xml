@@ -1,30 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <calaos:config xmlns:calaos="http://www.calaos.fr">
-        <calaos:option name="update_url" value="10.0.0.1/firmware/fwupdate.xml"/>
-        <calaos:option name="fw_target" value="calaos_tss"/>
-        <calaos:option name="fw_version" value="1.2"/>
-        <calaos:option name="calaos_user" value="nico"/>
-        <calaos:option name="calaos_password" value="xxxxxxxx"/>
-        <calaos:option name="show_cursor" value="false"/>
-        <calaos:option name="use_ntp" value="true"/>
-        <calaos:option name="ntp_server" value="europe.pool.ntp.org"/>
-        <calaos:option name="evas_engine" value="software"/>
-        <calaos:option name="touchscreen_driver" value="eGALAX"/>
-        <calaos:option name="device_type" value="calaos_server"/>
-        <calaos:option name="background" value="/usr/share/calaos/themes/background/Liquid.jpg"/>
-        <calaos:option name="dpms_enable" value="false"/>
-        <calaos:option name="dpms_standby" value="1270"/>
-        <calaos:option name="dpms_standby_min" value="5"/>
-        <calaos:option name="dpms_standby_max" value="1800"/>
-        <calaos:option name="dpms_block" value="false"/>
-        <calaos:option name="eth0_dhcp" value="false"/>
-        <calaos:option name="eth0_address" value="192.168.0.100"/>
-        <calaos:option name="eth0_broadcast" value="192.168.0.255"/>
-        <calaos:option name="eth0_netmask" value="255.255.255.0"/>
-        <calaos:option name="eth0_gateway" value="192.168.0.254"/>
-        <calaos:option name="eth1_address" value="10.0.0.200"/>
-        <calaos:option name="eth1_broadcast" value="10.0.0.255"/>
-        <calaos:option name="eth1_netmask" value="255.255.255.0"/>
-        <calaos:option name="eth1_gateway" value=""/>
-        <calaos:option name="dns_address" value="192.168.0.254"/>
+    <calaos:option name="fw_version" value="0" />
+    <calaos:option name="fw_target" value="calaos_tss" />
+    <calaos:option name="show_cursor" value="true" />
+    <calaos:option name="use_ntp" value="true" />
+    <calaos:option name="device_type" value="calaos_server" />
+    <calaos:option name="dpms_enable" value="false" />
+    <calaos:option name="smtp_server" value="" />
+    <calaos:option name="cn_user" value="aguirre.nicolas@gmail.com" />
+    <calaos:option name="cn_pass" value="xxxx" />
+    <calaos:option name="longitude" value="2.322235" />
+    <calaos:option name="latitude" value="48.864715" />
 </calaos:config>
