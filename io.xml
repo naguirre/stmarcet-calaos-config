@@ -1,47 +1,57 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <calaos:ioconfig xmlns:calaos="http://www.calaos.fr">
     <calaos:home>
         <calaos:room name="Bar" type="cuisine" hits="0">
-            <calaos:input chauffage_id="0" gtype="temp" gui_type="temp" host="10.0.0.123" id="input_4" interval="300" logged="true" name="Température Bar" ow_args="--w1" ow_id="28.A691B4040000" port="502" type="OWTemp" var="0" visible="true" />
-            <calaos:input gui_type="time_range" host="10.0.0.123" id="input_3" months="111111111111" name="Plages horraire chauffage" port="502" type="InPlageHoraire" var="0" visible="false">
+            <calaos:input chauffage_id="0" gtype="temp" gui_type="temp" host="10.0.0.123" id="input_4" interval="300" logged="true" name="Température Bar" ow_args="--w1" ow_id="28.A691B4040000" port="502" type="OWTemp" var="0" visible="true"/>
+            <calaos:input months="111111111111" gui_type="time_range" host="10.0.0.123" id="input_3" name="Plages horraire chauffage" port="502" type="InPlageHoraire" var="0" visible="false">
                 <calaos:lundi>
-                    <calaos:plage start_type="0" start_hour="6" start_min="0" start_sec="0" end_type="0" end_hour="8" end_min="15" end_sec="0" />
-                    <calaos:plage start_type="0" start_hour="18" start_min="0" start_sec="0" end_type="0" end_hour="23" end_min="00" end_sec="0" />
+                    <calaos:plage start_hour="6" start_min="0" start_sec="0" start_type="0" start_offset="1" end_hour="8" end_min="15" end_sec="0" end_type="0" end_offset="1"/>
+                    <calaos:plage start_hour="18" start_min="0" start_sec="0" start_type="0" start_offset="1" end_hour="23" end_min="00" end_sec="0" end_type="0" end_offset="1"/>
                 </calaos:lundi>
                 <calaos:mardi>
-                    <calaos:plage start_type="0" start_hour="6" start_min="0" start_sec="0" end_type="0" end_hour="8" end_min="15" end_sec="0" />
-                    <calaos:plage start_type="0" start_hour="18" start_min="0" start_sec="0" end_type="0" end_hour="23" end_min="00" end_sec="0" />
+                    <calaos:plage start_hour="6" start_min="0" start_sec="0" start_type="0" start_offset="1" end_hour="8" end_min="15" end_sec="0" end_type="0" end_offset="1"/>
+                    <calaos:plage start_hour="18" start_min="0" start_sec="0" start_type="0" start_offset="1" end_hour="23" end_min="00" end_sec="0" end_type="0" end_offset="1"/>
                 </calaos:mardi>
                 <calaos:mercredi>
-                    <calaos:plage start_type="0" start_hour="6" start_min="0" start_sec="0" end_type="0" end_hour="8" end_min="15" end_sec="0" />
-                    <calaos:plage start_type="0" start_hour="18" start_min="0" start_sec="0" end_type="0" end_hour="23" end_min="00" end_sec="0" />
+                    <calaos:plage start_hour="6" start_min="0" start_sec="0" start_type="0" start_offset="1" end_hour="8" end_min="15" end_sec="0" end_type="0" end_offset="1"/>
+                    <calaos:plage start_hour="18" start_min="0" start_sec="0" start_type="0" start_offset="1" end_hour="23" end_min="00" end_sec="0" end_type="0" end_offset="1"/>
                 </calaos:mercredi>
                 <calaos:jeudi>
-                    <calaos:plage start_type="0" start_hour="6" start_min="0" start_sec="0" end_type="0" end_hour="8" end_min="15" end_sec="0" />
-                    <calaos:plage start_type="0" start_hour="18" start_min="0" start_sec="0" end_type="0" end_hour="23" end_min="00" end_sec="0" />
+                    <calaos:plage start_hour="6" start_min="0" start_sec="0" start_type="0" start_offset="1" end_hour="8" end_min="15" end_sec="0" end_type="0" end_offset="1"/>
+                    <calaos:plage start_hour="18" start_min="0" start_sec="0" start_type="0" start_offset="1" end_hour="23" end_min="00" end_sec="0" end_type="0" end_offset="1"/>
                 </calaos:jeudi>
                 <calaos:vendredi>
-                    <calaos:plage start_type="0" start_hour="6" start_min="0" start_sec="0" end_type="0" end_hour="8" end_min="15" end_sec="0" />
-                    <calaos:plage start_type="0" start_hour="18" start_min="0" start_sec="0" end_type="0" end_hour="23" end_min="00" end_sec="0" />
+                    <calaos:plage start_hour="6" start_min="0" start_sec="0" start_type="0" start_offset="1" end_hour="8" end_min="15" end_sec="0" end_type="0" end_offset="1"/>
+                    <calaos:plage start_hour="18" start_min="0" start_sec="0" start_type="0" start_offset="1" end_hour="23" end_min="00" end_sec="0" end_type="0" end_offset="1"/>
                 </calaos:vendredi>
                 <calaos:samedi>
-                    <calaos:plage start_type="0" start_hour="8" start_min="0" start_sec="0" end_type="0" end_hour="23" end_min="00" end_sec="0" />
+                    <calaos:plage start_hour="8" start_min="0" start_sec="0" start_type="0" start_offset="1" end_hour="23" end_min="00" end_sec="0" end_type="0" end_offset="1"/>
                 </calaos:samedi>
                 <calaos:dimanche>
-                    <calaos:plage start_type="0" start_hour="8" start_min="0" start_sec="0" end_type="0" end_hour="23" end_min="00" end_sec="0" />
+                    <calaos:plage start_hour="8" start_min="0" start_sec="0" start_type="0" start_offset="1" end_hour="23" end_min="00" end_sec="0" end_type="0" end_offset="1"/>
                 </calaos:dimanche>
             </calaos:input>
-            <calaos:internal chauffage_id="0" gui_type="var_int" id="intern_0" name="Consigne" rw="true" save="true" type="InternalInt" visible="true" />
-            <calaos:internal gui_type="var_int" id="intern_1" name="Consigne Jour" rw="true" save="true" type="InternalInt" value="21" visible="true" />
-            <calaos:internal gui_type="var_int" id="intern_2" name="Consigne Nuit" rw="true" save="true" type="InternalInt" value="16" visible="true" />
-            <calaos:internal gui_type="var_bool" id="intern_3" name="Départ en Vacances" rw="true" save="true" type="InternalBool" value="false" visible="true" />
-            <calaos:output gpio="23" gtype="light" gui_type="light" host="10.0.0.123" id="output_0" logged="true" name="Activation Chaudiere" port="502" type="GpioOutputSwitch" var="0" visible="true" />
+            <calaos:internal chauffage_id="0" gui_type="var_int" id="intern_0" name="Consigne" rw="true" save="true" type="InternalInt" visible="true"/>
+            <calaos:internal gui_type="var_int" id="intern_1" name="Consigne Jour" rw="true" save="true" type="InternalInt" value="21" visible="true"/>
+            <calaos:internal gui_type="var_int" id="intern_2" name="Consigne Nuit" rw="true" save="true" type="InternalInt" value="16" visible="true"/>
+            <calaos:internal gui_type="var_bool" id="intern_3" name="Départ en Vacances" rw="true" save="true" type="InternalBool" value="false" visible="true"/>
+            <calaos:output gpio="23" gtype="light" gui_type="light" host="10.0.0.123" id="output_0" logged="true" name="Activation Chaudiere" port="502" type="GpioOutputSwitch" var="0" visible="true"/>
         </calaos:room>
         <calaos:room name="Chambre" type="chambre" hits="0">
-            <calaos:audio host="192.168.1.5" id="00:04:20:26:27:0c" iid="input_1" name="Squeezebox Radio" oid="output_2" pid="0" port_cli="9090" port_web="9000" type="slim" />
+            <calaos:audio host="192.168.1.5" id="00:04:20:26:27:0c" iid="input_1" name="Squeezebox Radio" oid="output_2" pid="0" port="9090" port_cli="9090" port_web="9000" type="slim"/>
         </calaos:room>
         <calaos:room name="Salon" type="salon" hits="0">
-            <calaos:audio host="192.168.1.5" id="00:04:20:23:17:c6" iid="input_0" name="Salon" oid="output_1" pid="1" port_cli="9090" port_web="9000" type="slim" />
+            <calaos:audio host="192.168.1.5" id="00:04:20:23:17:c6" iid="input_0" name="Salon" oid="output_1" pid="1" port="9090" port_cli="9090" port_web="9000" type="slim"/>
+        </calaos:room>
+        <calaos:room name="Général" type="misc" hits="0">
+            <calaos:input file_type="json" id="input_2" name="Température extérieure" offset="-274.15" path="main/temp" type="WebInputTemp" url="http://api.openweathermap.org/data/2.5/weather?q=Toulouse&amp;lang=fr"/>
+            <calaos:input file_type="json" id="input_5" name="Préssion atmosphérique" path="main/pressure" type="WebInputAnalog" unit="hPa" url="http://api.openweathermap.org/data/2.5/weather?q=Toulouse&amp;lang=fr"/>
+            <calaos:input file_type="json" id="input_6" name="Humidité" path="main/humidity" type="WebInputAnalog" unit="%" url="http://api.openweathermap.org/data/2.5/weather?q=Toulouse&amp;amp;lang=fr"/>
+            <calaos:input file_type="json" id="input_7" name="Température Minimale" offset="-274.15" path="main/temp_min" type="WebInputTemp" url="http://api.openweathermap.org/data/2.5/weather?q=Toulouse&amp;amp;lang=fr"/>
+            <calaos:input file_type="json" id="input_8" name="Température Maximale" offset="-274.15" path="main/temp_max" type="WebInputTemp" url="http://api.openweathermap.org/data/2.5/weather?q=Toulouse&amp;amp;lang=fr"/>
+            <calaos:input id="input_9" name="Quel temps fait il ?" type="scenario" visible="true"/>
+            <calaos:output data="" data_type="application/json" gui_type="string_out" id="output_3" name="TTS Karotz" request_type="GET" type="WebOutputString" url="http://192.168.1.72/cgi-bin/tts?voice=alice&amp;text=__##VALUE##__&amp;nocache=0" visible="true" />
+            <calaos:input file_type="json" id="input_10" name="Temps" path="weather/[0]/description" type="WebInputString" url="http://api.openweathermap.org/data/2.5/weather?q=Toulouse&amp;lang=fr"/>
         </calaos:room>
     </calaos:home>
 </calaos:ioconfig>
