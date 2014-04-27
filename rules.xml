@@ -1,85 +1,85 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <calaos:rules xmlns:calaos="http://www.calaos.fr">
-    <calaos:rule name="chauffage on" type="Bar" specialType="">
-        <calaos:condition type="standard">
-            <calaos:input id="input_4" oper="INF=" val="" val_var="intern_0"/>
+    <calaos:rule name="chauffage on" specialType="" type="Bar">
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="input_4" oper="INF=" val="" val_var="intern_0" />
         </calaos:condition>
         <calaos:action type="standard">
-            <calaos:output id="output_0" val="true"/>
+            <calaos:output id="output_0" val="true" />
         </calaos:action>
     </calaos:rule>
-    <calaos:rule name="chauffage off" type="Bar" specialType="">
-        <calaos:condition type="standard">
-            <calaos:input id="input_4" oper="SUP" val="" val_var="intern_0"/>
+    <calaos:rule name="chauffage off" specialType="" type="Bar">
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="input_4" oper="SUP" val="" val_var="intern_0" />
         </calaos:condition>
         <calaos:action type="standard">
-            <calaos:output id="output_0" val="false"/>
+            <calaos:output id="output_0" val="false" />
         </calaos:action>
     </calaos:rule>
-    <calaos:rule name="Plages horraire chauffage jour" type="Bar" specialType="">
-        <calaos:condition type="standard">
-            <calaos:input id="input_3" oper="==" val="true"/>
+    <calaos:rule name="Plages horraire chauffage jour" specialType="" type="Bar">
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="input_3" oper="==" val="true" />
         </calaos:condition>
-        <calaos:condition type="standard">
-            <calaos:input id="intern_3" oper="==" val="false"/>
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="intern_3" oper="==" val="false" />
         </calaos:condition>
         <calaos:action type="standard">
-            <calaos:output id="intern_0" val="" val_var="intern_1"/>
+            <calaos:output id="intern_0" val="" val_var="intern_1" />
         </calaos:action>
     </calaos:rule>
-    <calaos:rule name="Plages horraire chauffage nuit" type="Bar" specialType="">
-        <calaos:condition type="standard">
-            <calaos:input id="input_3" oper="==" val="false"/>
+    <calaos:rule name="Plages horraire chauffage nuit" specialType="" type="Bar">
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="input_3" oper="==" val="false" />
         </calaos:condition>
-        <calaos:condition type="standard">
-            <calaos:input id="intern_3" oper="==" val="false"/>
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="intern_3" oper="==" val="false" />
         </calaos:condition>
         <calaos:action type="standard">
-            <calaos:output id="intern_0" val="" val_var="intern_2"/>
+            <calaos:output id="intern_0" val="" val_var="intern_2" />
         </calaos:action>
     </calaos:rule>
-    <calaos:rule name="Changement consigne jour" type="Bar" specialType="">
-        <calaos:condition type="standard">
-            <calaos:input id="input_3" oper="==" val="true"/>
+    <calaos:rule name="Changement consigne jour" specialType="" type="Bar">
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="input_3" oper="==" val="true" />
         </calaos:condition>
-        <calaos:condition type="output">
-            <calaos:output id="intern_1" oper="==" val="changed"/>
+        <calaos:condition type="output" trigger="true">
+            <calaos:output id="intern_1" oper="==" val="changed" />
         </calaos:condition>
-        <calaos:condition type="standard">
-            <calaos:input id="input_3" oper="==" val="true"/>
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="input_3" oper="==" val="true" />
         </calaos:condition>
-        <calaos:condition type="standard">
-            <calaos:input id="intern_3" oper="==" val="false"/>
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="intern_3" oper="==" val="false" />
         </calaos:condition>
         <calaos:action type="standard">
-            <calaos:output id="intern_0" val="" val_var="intern_1"/>
+            <calaos:output id="intern_0" val="" val_var="intern_1" />
         </calaos:action>
     </calaos:rule>
-    <calaos:rule name="Changement consigne nuit" type="Bar" specialType="">
-        <calaos:condition type="standard">
-            <calaos:input id="input_3" oper="==" val="false"/>
+    <calaos:rule name="Changement consigne nuit" specialType="" type="Bar">
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="input_3" oper="==" val="false" />
         </calaos:condition>
-        <calaos:condition type="output">
-            <calaos:output id="intern_2" oper="==" val="changed"/>
+        <calaos:condition type="output" trigger="true">
+            <calaos:output id="intern_2" oper="==" val="changed" />
         </calaos:condition>
-        <calaos:condition type="standard">
-            <calaos:input id="intern_3" oper="==" val="false"/>
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="intern_3" oper="==" val="false" />
         </calaos:condition>
         <calaos:action type="standard">
-            <calaos:output id="intern_0" val="" val_var="intern_2"/>
+            <calaos:output id="intern_0" val="" val_var="intern_2" />
         </calaos:action>
     </calaos:rule>
-    <calaos:rule name="Depart en vacances" type="Bar" specialType="">
-        <calaos:condition type="standard">
-            <calaos:input id="intern_3" oper="==" val="true"/>
+    <calaos:rule name="Depart en vacances" specialType="" type="Bar">
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="intern_3" oper="==" val="true" />
         </calaos:condition>
         <calaos:action type="standard">
-            <calaos:output id="intern_0" val="6"/>
+            <calaos:output id="intern_0" val="6" />
         </calaos:action>
     </calaos:rule>
-    <calaos:rule name="Retour Vacances" type="Bar" specialType="">
-        <calaos:condition type="standard">
-            <calaos:input id="intern_0" oper="==" val="" val_var="intern_2"/>
+    <calaos:rule name="Retour Vacances" specialType="" type="Bar">
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="intern_0" oper="==" val="" val_var="intern_2" />
         </calaos:condition>
     </calaos:rule>
 </calaos:rules>
