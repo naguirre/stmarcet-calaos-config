@@ -42,7 +42,7 @@
         <calaos:condition type="standard" trigger="true">
             <calaos:input id="input_3" oper="==" val="true"/>
         </calaos:condition>
-        <calaos:condition type="output">
+        <calaos:condition type="output" trigger="true">
             <calaos:output id="intern_1" oper="==" val="changed"/>
         </calaos:condition>
         <calaos:condition type="standard" trigger="true">
@@ -59,7 +59,7 @@
         <calaos:condition type="standard" trigger="true">
             <calaos:input id="input_3" oper="==" val="false"/>
         </calaos:condition>
-        <calaos:condition type="output">
+        <calaos:condition type="output" trigger="true">
             <calaos:output id="intern_2" oper="==" val="changed"/>
         </calaos:condition>
         <calaos:condition type="standard" trigger="true">

@@ -35,13 +35,16 @@
             <calaos:internal gui_type="var_int" id="intern_1" name="Consigne Jour" rw="true" save="true" type="InternalInt" value="21" visible="true"/>
             <calaos:internal gui_type="var_int" id="intern_2" name="Consigne Nuit" rw="true" save="true" type="InternalInt" value="16" visible="true"/>
             <calaos:internal gui_type="var_bool" id="intern_3" name="Départ en Vacances" rw="true" save="true" type="InternalBool" value="false" visible="true"/>
+            <calaos:input file_type="json" frequency="10000" id="input_11" name="test" path="" type="WebInputString" url="test"/>
             <calaos:output gpio="23" gtype="light" gui_type="light" host="10.0.0.123" id="output_0" logged="true" name="Activation Chaudiere" port="502" type="GpioOutputSwitch" var="0" visible="true"/>
+            <calaos:output file_type="json" id="output_4" name="Karotz Light" path="" type="WebOutputLight" url="http://192.168.1.72//cgi-bin/leds?pulse=1&amp;color=__##VALUE##__" value_off="000000" value_on="FFFFFF"/>
         </calaos:room>
         <calaos:room name="Chambre" type="chambre" hits="0">
             <calaos:audio host="192.168.1.5" id="00:04:20:26:27:0c" iid="input_1" name="Squeezebox Radio" oid="output_2" pid="0" port="9090" port_cli="9090" port_web="9000" type="slim"/>
         </calaos:room>
         <calaos:room name="Salon" type="salon" hits="0">
             <calaos:audio host="192.168.1.5" id="00:04:20:23:17:c6" iid="input_0" name="Salon" oid="output_1" pid="1" port="9090" port_cli="9090" port_web="9000" type="slim"/>
+            <calaos:output file_type="json" frequency="10000" id="output_5" name="Hue Salon" path="on" type="WebOutputLightRGB" url="http://192.168.1.34/api/24c59b7334d86acf143b6e6b3207c247/lights/2/state"/>
         </calaos:room>
         <calaos:room name="Général" type="misc" hits="0">
             <calaos:input file_type="json" id="input_2" name="Température extérieure" offset="-274.15" path="main/temp" type="WebInputTemp" url="http://api.openweathermap.org/data/2.5/weather?q=Toulouse&amp;lang=fr"/>
@@ -50,8 +53,8 @@
             <calaos:input file_type="json" id="input_7" name="Température Minimale" offset="-274.15" path="main/temp_min" type="WebInputTemp" url="http://api.openweathermap.org/data/2.5/weather?q=Toulouse&amp;amp;lang=fr"/>
             <calaos:input file_type="json" id="input_8" name="Température Maximale" offset="-274.15" path="main/temp_max" type="WebInputTemp" url="http://api.openweathermap.org/data/2.5/weather?q=Toulouse&amp;amp;lang=fr"/>
             <calaos:input id="input_9" name="Quel temps fait il ?" type="scenario" visible="true"/>
-            <calaos:output data="" data_type="application/json" gui_type="string_out" id="output_3" name="TTS Karotz" request_type="GET" type="WebOutputString" url="http://192.168.1.72/cgi-bin/tts?voice=alice&amp;text=__##VALUE##__&amp;nocache=0" visible="true" />
             <calaos:input file_type="json" id="input_10" name="Temps" path="weather/[0]/description" type="WebInputString" url="http://api.openweathermap.org/data/2.5/weather?q=Toulouse&amp;lang=fr"/>
+            <calaos:output data="" data_type="application/json" gui_type="string_out" id="output_3" name="TTS Karotz" request_type="GET" type="WebOutputString" url="http://192.168.1.72/cgi-bin/tts?voice=alice&amp;text=__##VALUE##__&amp;nocache=0" visible="true"/>
         </calaos:room>
     </calaos:home>
 </calaos:ioconfig>
