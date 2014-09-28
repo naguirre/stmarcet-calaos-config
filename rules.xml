@@ -99,4 +99,23 @@ calaos:setOutputValue("output_3", str)
 return true]]></calaos:script>
         </calaos:action>
     </calaos:rule>
+    <calaos:rule name="Conso changed" type="Général" specialType="">
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="input_11" oper="==" val=""/>
+        </calaos:condition>
+        <calaos:action type="script">
+            <calaos:script type="lua"><![CDATA[
+local str
+
+local power = calaos:getInputValue("input_11")
+local temp_salon = calaos:getInputValue("input_4")
+local temp_rpi = calaos:getInputValue("input_2")
+local temp_ext = calaos:getInputValue("input_2")
+
+str = "http://192.168.1.22/post.json?json={power:" .. power ..", temp_salon:" .. temp_salon .. ", temp_rpi:" .. temp_rpi .. ",temp_ext:" .. temp_ext .. "}"
+
+calaos:requestUrl(str)
+return true]]></calaos:script>
+        </calaos:action>
+    </calaos:rule>
 </calaos:rules>
