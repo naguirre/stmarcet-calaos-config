@@ -101,7 +101,7 @@ return true]]></calaos:script>
     </calaos:rule>
     <calaos:rule name="Conso changed" type="Général" specialType="">
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_11" oper="==" val=""/>
+            <calaos:input id="input_11" oper="SUP" val="0"/>
         </calaos:condition>
         <calaos:action type="script">
             <calaos:script type="lua"><![CDATA[
@@ -109,12 +109,50 @@ local str
 
 local power = calaos:getInputValue("input_11")
 local temp_salon = calaos:getInputValue("input_4")
-local temp_rpi = calaos:getInputValue("input_2")
+local temp_rpi = calaos:getInputValue("input_40")
 local temp_ext = calaos:getInputValue("input_2")
+local humidity = calaos:getInputValue("input_6")
+local pressure = calaos:getInputValue("input_5")
 
-str = "http://192.168.1.22/post.json?json={power:" .. power ..", temp_salon:" .. temp_salon .. ", temp_rpi:" .. temp_rpi .. ",temp_ext:" .. temp_ext .. "}"
+str = "http://192.168.1.22/emoncms/input/post.json\?json\=\{power:" .. power .. ",temp_salon:" .. temp_salon .. ",temp_rpi:" .. temp_rpi .. ",temp_ext:" .. temp_ext .. ",pressure:" .. pressure .. ",humidity:" .. humidity .. "}\&apikey\=8e16ef22f63216c2f3864aa6f6d7c234"
+
 
 calaos:requestUrl(str)
+
+return true]]></calaos:script>
+        </calaos:action>
+    </calaos:rule>
+    <calaos:rule name="Karotz ambiance température" type="Général" specialType="">
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="input_4" oper="==" val="changed"/>
+        </calaos:condition>
+        <calaos:action type="script">
+            <calaos:script type="lua"><![CDATA[local temp = calaos:getInputValue("intern_0")
+
+if temp < 10.0 then
+    --blanc
+    str = "set 0x60FFFF"
+elseif temp >= 10.0 and temp < 15.0 then
+    --bleu clair
+    str = "set 0x28FFFF"
+elseif temp >= 15.0 and temp < 19.0 then
+    --bleu foncé
+    str = "set 0x0060FF"
+elseif temp >= 19.0 and temp < 22.0 then
+    -- vert
+    str = "set 0x28FF28"
+elseif temp >= 22.0 and temp < 25.0 then
+    -- Jaune
+    str = "set 0x7AFF00"
+elseif temp >= 25.0 and temp < 28.0 then
+    -- Orange
+    str = "set 0xFFFF00"
+elseif temp > 28.0 then
+    -- Rouge
+    str = "set 0xFF3D00"
+end
+
+calaos:setOutputValue("output_6", str)
 return true]]></calaos:script>
         </calaos:action>
     </calaos:rule>
