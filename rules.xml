@@ -101,7 +101,7 @@ return true]]></calaos:script>
     </calaos:rule>
     <calaos:rule name="Conso changed" type="Général" specialType="">
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_11" oper="SUP" val="0"/>
+            <calaos:input id="input_11" oper="==" val="changed"/>
         </calaos:condition>
         <calaos:action type="script">
             <calaos:script type="lua"><![CDATA[
