@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<calaos:update xmlns:calaos="http://www.calaos.fr">
-        <calaos:firmware name="Touchscreen + Server v1.0" url="http://10.0.0.10/calaos/calaos_tss_1.0.img" version="1.0" target="calaos_tss" md5="654654q65d4qs32d13qs1d3qsd" />
-        <calaos:firmware name="Touchscreen v1.0" url="http://www.calaos.fr/firmware/calaos_ts_1.0.img" version="1.0" target="calaos_ts" md5="654654q65d4qs32d13qs1d3qsd" />
-</calaos:update>
