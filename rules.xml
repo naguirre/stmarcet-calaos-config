@@ -94,21 +94,20 @@ local humidity = calaos:getInputValue("input_6")
 local temp_max = calaos:getInputValue("input_8")
 local temp_min = calaos:getInputValue("input_7")
 local temps = calaos:getInputValue("input_10")
-local str = "La température dans le salon est de " .. temp .. " ° Celcius. La température extérieure est de " .. ext_temp .. "° Celcius, la pression atmosphérique  est de " .. pressure .. "  Hecto Pascal et le taux d'humidité est de " .. humidity .. "%. Aujourd'hui le temps est " .. temps .. " , avec une température minimale de " .. temp_min .. "° Celcius et maximale de " .. temp_max .. "° Celcius. Bonne journée !"
+local str = "La température dans le salon est de " .. temp .. " ° Celcius. La température extérieure est de " .. ext_temp .. "° Celcius, " .. temps .. " !"
 calaos:setOutputValue("output_3", str)
 return true]]></calaos:script>
         </calaos:action>
     </calaos:rule>
     <calaos:rule name="Conso changed" specialType="" type="Général">
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_11" oper="==" val="changed"/>
+            <calaos:input id="input_13" oper="==" val="true"/>
         </calaos:condition>
         <calaos:action type="script">
-            <calaos:script type="lua"><![CDATA[
+            <calaos:script type="lua"><![CDATA[local http = require("socket.http")
 local str
 
-local power = calaos:getInputValue("input_11")
-local tarif = calaos:getInputValue("input_13")
+
 local temp_salon = calaos:getInputValue("input_4")
 local temp_rpi = calaos:getInputValue("input_40")
 local temp_ext = calaos:getInputValue("input_2")
@@ -134,10 +133,9 @@ else
 end
 
 
-str = "http://emoncms.enna.me/input/post.json\?json\=\{power:" .. power .. ",temp_salon:" .. temp_salon .. ",temp_rpi:" .. temp_rpi .. ",temp_ext:" .. temp_ext .. ",pressure:" .. pressure .. ",humidity:" .. humidity .. ",heat_temp:" .. heat_temp .. ",consigne:" .. consigne .."}\&apikey\=8e16ef22f63216c2f3864aa6f6d7c234"
+str = "http://emoncms.enna.me/input/post.json?json={temp_salon:" .. temp_salon .. ",temp_rpi:" .. temp_rpi .. ",temp_ext:" .. temp_ext .. ",pressure:" .. pressure .. ",humidity:" .. humidity .. ",heat_temp:" .. heat_temp .. ",consigne:" .. consigne .. "}&apikey=8e16ef22f63216c2f3864aa6f6d7c234"
 
-
-calaos:requestUrl(str)
+http.request(str)
 
 return true]]></calaos:script>
         </calaos:action>
@@ -147,33 +145,123 @@ return true]]></calaos:script>
             <calaos:input id="input_4" oper="==" val="changed"/>
         </calaos:condition>
         <calaos:action type="script">
-            <calaos:script type="lua"><![CDATA[local temp = calaos:getInputValue("input_4")
+            <calaos:script type="lua"><![CDATA[local temp = tonumber(calaos:getInputValue("input_4"))
 
 if temp < 10.0 then
     --blanc
-    str = "set 0x60FFFF"
+    str = "set #60FFFF"
 elseif temp >= 10.0 and temp < 15.0 then
     --bleu clair
-    str = "set 0x28FFFF"
+    str = "set #28FFFF"
 elseif temp >= 15.0 and temp < 19.0 then
     --bleu foncé
-    str = "set 0x0060FF"
+    str = "set #0060FF"
 elseif temp >= 19.0 and temp < 22.0 then
     -- vert
-    str = "set 0x28FF28"
+    str = "set #28FF28"
 elseif temp >= 22.0 and temp < 25.0 then
     -- Jaune
-    str = "set 0x7AFF00"
+    str = "set #7AFF00"
 elseif temp >= 25.0 and temp < 28.0 then
     -- Orange
-    str = "set 0xFFFF00"
+    str = "set #FFFF00"
 elseif temp > 28.0 then
     -- Rouge
-    str = "set 0xFF3D00"
+    str = "set #FF3D00"
 end
-
+print(str)
 calaos:setOutputValue("output_8", str)
 return true]]></calaos:script>
+        </calaos:action>
+    </calaos:rule>
+    <calaos:rule name="Temps change" type="Général">
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="input_11" oper="==" val="changed"/>
+        </calaos:condition>
+        <calaos:action type="script">
+            <calaos:script type="lua"><![CDATA[temps = calaos:getInputValue("input_11")
+local http = require("socket.http")
+
+if temps >= 200 and temps < 300 then
+   -- Attention
+   left = 6
+   right = 16
+elseif temps >= 300 and temps < 800 then
+   -- Pluie
+   left = 6
+   right = 6
+elseif temps >= 800 and temps < 900 then
+   -- Beau temps
+   left = 0
+   right = 0
+elseif temps >= 900 and temps < 957 then
+   -- Normal
+   left = 0
+   right = 0
+else
+   -- Attention
+   left = 6
+   right = 16
+end
+
+
+
+url = "http://192.168.1.72/cgi-bin/ears?left=" .. left .. "&right=" .. right .. "&noreset=0"
+
+http.request(url)
+
+return true
+]]></calaos:script>
+        </calaos:action>
+    </calaos:rule>
+    <calaos:rule name="trigger programmation sieste" type="Général">
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="input_15" oper="==" val="true"/>
+        </calaos:condition>
+        <calaos:action type="standard">
+            <calaos:output id="intern_5" val="inc 1"/>
+        </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="input_16" val="true"/>
+        </calaos:action>
+    </calaos:rule>
+    <calaos:rule name="Timer compteur sieste expire" type="Général">
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="input_16" oper="==" val="true"/>
+        </calaos:condition>
+        <calaos:action type="script">
+            <calaos:script type="lua"><![CDATA[local http = require("socket.http")
+function SecondsToClock(sSeconds)
+    local nSeconds = sSeconds
+    if nSeconds == 0 then
+        --return nil;
+        return "00:00:00";
+    else
+        nHours = string.format("%02.f", math.floor(nSeconds/3600));
+        nMins = string.format("%02.f", math.floor(nSeconds/60 - (nHours*60)));
+        nSecs = string.format("%02.f", math.floor(nSeconds - nHours*3600 - nMins *60));
+        return nHours..":"..nMins..":"..nSecs..":000"
+    end
+end
+
+cpt = calaos:getInputValue("intern_5")
+str = SecondsToClock(cpt * 30 * 60)
+print(str)
+calaos:setOutputValue("input_17", "stop")
+calaos:setOutputValue("input_17", str)
+calaos:setOutputValue("input_17", "start")
+local str = "Fin de la sieste programmée dans " .. (cpt * 30) .. " minutes."
+calaos:setOutputValue("output_3", str)
+calaos:setOutputValue("intern_5", 0)
+return true]]></calaos:script>
+        </calaos:action>
+    </calaos:rule>
+    <calaos:rule name="fin de sieste" type="Général">
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="input_17" oper="==" val="true"/>
+        </calaos:condition>
+        <calaos:action type="standard">
+            <calaos:output id="output_3" val="Fin de la sieste"/>
         </calaos:action>
     </calaos:rule>
 </calaos:rules>
