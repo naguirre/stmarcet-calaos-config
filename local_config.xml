@@ -6,9 +6,11 @@
     <calaos:option name="use_ntp" value="true" />
     <calaos:option name="device_type" value="calaos_server" />
     <calaos:option name="dpms_enable" value="false" />
-    <calaos:option name="smtp_server" value="" />
-    <calaos:option name="cn_user" value="aguirre.nicolas@gmail.com" />
+    <calaos:option name="smtp_server" value="enna.me" />
+    <calaos:option name="cn_user" value="nico" />
     <calaos:option name="cn_pass" value="xxxx" />
     <calaos:option name="longitude" value="2.322235" />
     <calaos:option name="latitude" value="48.864715" />
+    <calaos:option name="smtp_port" value="25" />
+    <calaos:option name="smtp_auth" value="false" />
 </calaos:config>

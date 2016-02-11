@@ -1,93 +1,78 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <calaos:rules xmlns:calaos="http://www.calaos.fr">
-    <calaos:rule name="chauffage on" specialType="" type="Bar">
-        <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_4" oper="INF=" val="" val_var="intern_0"/>
-        </calaos:condition>
-        <calaos:action type="standard">
-            <calaos:output id="output_0" val="true"/>
-        </calaos:action>
-    </calaos:rule>
-    <calaos:rule name="chauffage off" specialType="" type="Bar">
-        <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_4" oper="SUP" val="" val_var="intern_0"/>
-        </calaos:condition>
-        <calaos:action type="standard">
-            <calaos:output id="output_0" val="false"/>
-        </calaos:action>
-    </calaos:rule>
     <calaos:rule name="Plages horraire chauffage jour" specialType="" type="Bar">
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_3" oper="==" val="true"/>
+            <calaos:input id="input_3" oper="==" val="true" />
         </calaos:condition>
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="intern_3" oper="==" val="false"/>
+            <calaos:input id="intern_3" oper="==" val="false" />
         </calaos:condition>
         <calaos:action type="standard">
-            <calaos:output id="intern_0" val="" val_var="intern_1"/>
+            <calaos:output id="intern_0" val="" val_var="intern_1" />
         </calaos:action>
     </calaos:rule>
     <calaos:rule name="Plages horraire chauffage nuit" specialType="" type="Bar">
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_3" oper="==" val="false"/>
+            <calaos:input id="input_3" oper="==" val="false" />
         </calaos:condition>
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="intern_3" oper="==" val="false"/>
+            <calaos:input id="intern_3" oper="==" val="false" />
         </calaos:condition>
         <calaos:action type="standard">
-            <calaos:output id="intern_0" val="" val_var="intern_2"/>
+            <calaos:output id="intern_0" val="" val_var="intern_2" />
         </calaos:action>
     </calaos:rule>
     <calaos:rule name="Changement consigne jour" specialType="" type="Bar">
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_3" oper="==" val="true"/>
+            <calaos:input id="input_3" oper="==" val="true" />
         </calaos:condition>
         <calaos:condition type="output" trigger="true">
-            <calaos:output id="intern_1" oper="==" val="changed"/>
+            <calaos:output id="intern_1" oper="==" val="changed" />
         </calaos:condition>
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_3" oper="==" val="true"/>
+            <calaos:input id="input_3" oper="==" val="true" />
         </calaos:condition>
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="intern_3" oper="==" val="false"/>
+            <calaos:input id="intern_3" oper="==" val="false" />
         </calaos:condition>
         <calaos:action type="standard">
-            <calaos:output id="intern_0" val="" val_var="intern_1"/>
+            <calaos:output id="intern_0" val="" val_var="intern_1" />
         </calaos:action>
     </calaos:rule>
     <calaos:rule name="Changement consigne nuit" specialType="" type="Bar">
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_3" oper="==" val="false"/>
+            <calaos:input id="input_3" oper="==" val="false" />
         </calaos:condition>
         <calaos:condition type="output" trigger="true">
-            <calaos:output id="intern_2" oper="==" val="changed"/>
+            <calaos:output id="intern_2" oper="==" val="changed" />
         </calaos:condition>
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="intern_3" oper="==" val="false"/>
+            <calaos:input id="intern_3" oper="==" val="false" />
         </calaos:condition>
         <calaos:action type="standard">
-            <calaos:output id="intern_0" val="" val_var="intern_2"/>
+            <calaos:output id="intern_0" val="" val_var="intern_2" />
         </calaos:action>
     </calaos:rule>
     <calaos:rule name="Depart en vacances" specialType="" type="Bar">
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="intern_3" oper="==" val="true"/>
+            <calaos:input id="intern_3" oper="==" val="true" />
         </calaos:condition>
         <calaos:action type="standard">
-            <calaos:output id="intern_0" val="6"/>
+            <calaos:output id="intern_0" val="6" />
         </calaos:action>
     </calaos:rule>
     <calaos:rule name="Retour Vacances" specialType="" type="Bar">
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="intern_0" oper="==" val="" val_var="intern_2"/>
+            <calaos:input id="intern_0" oper="==" val="" val_var="intern_2" />
         </calaos:condition>
     </calaos:rule>
     <calaos:rule name="Météo" specialType="" type="Général">
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_9" oper="==" val="true"/>
+            <calaos:input id="input_9" oper="==" val="true" />
         </calaos:condition>
         <calaos:action type="script">
-            <calaos:script type="lua"><![CDATA[local temp = calaos:getInputValue("input_4")
+            <calaos:script type="lua">
+                <![CDATA[local temp = calaos:getInputValue("input_4")
 local ext_temp = calaos:getInputValue("input_2")
 local pressure = calaos:getInputValue("input_5")
 local humidity = calaos:getInputValue("input_6")
@@ -96,15 +81,17 @@ local temp_min = calaos:getInputValue("input_7")
 local temps = calaos:getInputValue("input_10")
 local str = "La température dans le salon est de " .. temp .. " ° Celcius. La température extérieure est de " .. ext_temp .. "° Celcius, " .. temps .. " !"
 calaos:setOutputValue("output_3", str)
-return true]]></calaos:script>
+return true]]>
+</calaos:script>
         </calaos:action>
     </calaos:rule>
     <calaos:rule name="Conso changed" specialType="" type="Général">
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_13" oper="==" val="true"/>
+            <calaos:input id="input_13" oper="==" val="true" />
         </calaos:condition>
         <calaos:action type="script">
-            <calaos:script type="lua"><![CDATA[local http = require("socket.http")
+            <calaos:script type="lua">
+                <![CDATA[local http = require("socket.http")
 local str
 
 
@@ -115,6 +102,9 @@ local humidity = calaos:getInputValue("input_6")
 local pressure = calaos:getInputValue("input_5")
 local heat_state = calaos:getOutputValue("output_0")
 local consigne = calaos:getInputValue("intern_0")
+local temp_emma = calaos:getInputValue("io_8")
+local hum_emma = calaos:getInputValue("io_9")
+
 
 local heat_temp
 
@@ -133,19 +123,21 @@ else
 end
 
 
-str = "http://emoncms.enna.me/input/post.json?json={temp_salon:" .. temp_salon .. ",temp_rpi:" .. temp_rpi .. ",temp_ext:" .. temp_ext .. ",pressure:" .. pressure .. ",humidity:" .. humidity .. ",heat_temp:" .. heat_temp .. ",consigne:" .. consigne .. "}&apikey=8e16ef22f63216c2f3864aa6f6d7c234"
+str = "http://192.168.1.98/input/post.json?node=calaos&json={temp_salon:" .. temp_salon .. ",temp_rpi:" .. temp_rpi .. ",temp_ext:" .. temp_ext .. ",pressure:" .. pressure .. ",humidity:" .. humidity .. ",heat_temp:" .. heat_temp .. ",consigne:" .. consigne .. ",temp_emma:" .. temp_emma .. ",hum_emma:" .. hum_emma .. "}&apikey=b03593141081cc43dd6832e0bb7ef5ca"
 
 http.request(str)
 
-return true]]></calaos:script>
+return true]]>
+</calaos:script>
         </calaos:action>
     </calaos:rule>
     <calaos:rule name="Karotz ambiance température" specialType="" type="Général">
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_4" oper="==" val="changed"/>
+            <calaos:input id="input_4" oper="==" val="changed" />
         </calaos:condition>
         <calaos:action type="script">
-            <calaos:script type="lua"><![CDATA[local temp = tonumber(calaos:getInputValue("input_4"))
+            <calaos:script type="lua">
+                <![CDATA[local temp = tonumber(calaos:getInputValue("input_4"))
 
 if temp < 10.0 then
     --blanc
@@ -171,15 +163,17 @@ elseif temp > 28.0 then
 end
 print(str)
 calaos:setOutputValue("output_8", str)
-return true]]></calaos:script>
+return true]]>
+</calaos:script>
         </calaos:action>
     </calaos:rule>
     <calaos:rule name="Temps change" type="Général">
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_11" oper="==" val="changed"/>
+            <calaos:input id="input_11" oper="==" val="changed" />
         </calaos:condition>
         <calaos:action type="script">
-            <calaos:script type="lua"><![CDATA[temps = calaos:getInputValue("input_11")
+            <calaos:script type="lua">
+                <![CDATA[temps = calaos:getInputValue("input_11")
 local http = require("socket.http")
 
 if temps >= 200 and temps < 300 then
@@ -211,26 +205,28 @@ url = "http://192.168.1.72/cgi-bin/ears?left=" .. left .. "&right=" .. right .. 
 http.request(url)
 
 return true
-]]></calaos:script>
+]]>
+</calaos:script>
         </calaos:action>
     </calaos:rule>
     <calaos:rule name="trigger programmation sieste" type="Général">
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_15" oper="==" val="true"/>
+            <calaos:input id="input_15" oper="==" val="true" />
         </calaos:condition>
         <calaos:action type="standard">
-            <calaos:output id="intern_5" val="inc 1"/>
+            <calaos:output id="intern_5" val="inc 1" />
         </calaos:action>
         <calaos:action type="standard">
-            <calaos:output id="input_16" val="true"/>
+            <calaos:output id="input_16" val="true" />
         </calaos:action>
     </calaos:rule>
     <calaos:rule name="Timer compteur sieste expire" type="Général">
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_16" oper="==" val="true"/>
+            <calaos:input id="input_16" oper="==" val="true" />
         </calaos:condition>
         <calaos:action type="script">
-            <calaos:script type="lua"><![CDATA[local http = require("socket.http")
+            <calaos:script type="lua">
+                <![CDATA[local http = require("socket.http")
 function SecondsToClock(sSeconds)
     local nSeconds = sSeconds
     if nSeconds == 0 then
@@ -253,15 +249,86 @@ calaos:setOutputValue("input_17", "start")
 local str = "Fin de la sieste programmée dans " .. (cpt * 30) .. " minutes."
 calaos:setOutputValue("output_3", str)
 calaos:setOutputValue("intern_5", 0)
-return true]]></calaos:script>
+return true]]>
+</calaos:script>
         </calaos:action>
     </calaos:rule>
     <calaos:rule name="fin de sieste" type="Général">
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_17" oper="==" val="true"/>
+            <calaos:input id="input_17" oper="==" val="true" />
         </calaos:condition>
         <calaos:action type="standard">
-            <calaos:output id="output_3" val="Fin de la sieste"/>
+            <calaos:output id="output_3" val="Fin de la sieste" />
+        </calaos:action>
+    </calaos:rule>
+    <calaos:rule name="Horraires Wifi On" type="Bureau">
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="input_1" oper="==" val="true" />
+        </calaos:condition>
+        <calaos:action type="standard">
+            <calaos:output id="io_7" val="true" />
+        </calaos:action>
+    </calaos:rule>
+    <calaos:rule name="Horraires Wifi Off" type="Bureau">
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="input_1" oper="==" val="false" />
+        </calaos:condition>
+        <calaos:action type="standard">
+            <calaos:output id="io_7" val="false" />
+        </calaos:action>
+    </calaos:rule>
+    <calaos:rule name="Btn Telco DIO 2 ON" type="Salon">
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="io_2" oper="==" val="true" />
+        </calaos:condition>
+        <calaos:action type="standard">
+            <calaos:output id="io_7" val="true" />
+        </calaos:action>
+    </calaos:rule>
+    <calaos:rule name="Btn Telco DIO 2 OFF" type="Salon">
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="io_3" oper="==" val="true" />
+        </calaos:condition>
+        <calaos:action type="standard">
+            <calaos:output id="io_7" val="false" />
+        </calaos:action>
+    </calaos:rule>
+    <calaos:rule name="lumiére douce ON" type="Chambre d&apos;Emma">
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="intern_6" oper="==" val="true" />
+        </calaos:condition>
+        <calaos:action type="standard">
+            <calaos:output id="output_4" val="set #141010" />
+        </calaos:action>
+    </calaos:rule>
+    <calaos:rule name="lumiére douce off" type="Chambre d&apos;Emma">
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="intern_6" oper="==" val="false" />
+        </calaos:condition>
+        <calaos:action type="standard">
+            <calaos:output id="output_4" val="false" />
+        </calaos:action>
+    </calaos:rule>
+    <calaos:rule name="chauffage on (copy)" specialType="" type="Bar">
+        <calaos:condition type="standard" trigger="false">
+            <calaos:input id="input_4" oper="INF=" val="" val_var="intern_0" />
+        </calaos:condition>
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="input_18" oper="==" val="true" />
+        </calaos:condition>
+        <calaos:action type="standard">
+            <calaos:output id="output_0" val="true" />
+        </calaos:action>
+    </calaos:rule>
+    <calaos:rule name="chauffage off (copy)" specialType="" type="Bar">
+        <calaos:condition type="standard" trigger="false">
+            <calaos:input id="input_4" oper="SUP" val="" val_var="intern_0" />
+        </calaos:condition>
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="input_18" oper="==" val="true" />
+        </calaos:condition>
+        <calaos:action type="standard">
+            <calaos:output id="output_0" val="false" />
         </calaos:action>
     </calaos:rule>
 </calaos:rules>
