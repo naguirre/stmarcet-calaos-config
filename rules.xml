@@ -30,9 +30,6 @@
             <calaos:output id="intern_1" oper="==" val="changed" />
         </calaos:condition>
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_3" oper="==" val="true" />
-        </calaos:condition>
-        <calaos:condition type="standard" trigger="true">
             <calaos:input id="intern_3" oper="==" val="false" />
         </calaos:condition>
         <calaos:action type="standard">
@@ -81,52 +78,6 @@ local temp_min = calaos:getInputValue("input_7")
 local temps = calaos:getInputValue("input_10")
 local str = "La température dans le salon est de " .. temp .. " ° Celcius. La température extérieure est de " .. ext_temp .. "° Celcius, " .. temps .. " !"
 calaos:setOutputValue("output_3", str)
-return true]]>
-</calaos:script>
-        </calaos:action>
-    </calaos:rule>
-    <calaos:rule name="Conso changed" specialType="" type="Général">
-        <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_13" oper="==" val="true" />
-        </calaos:condition>
-        <calaos:action type="script">
-            <calaos:script type="lua">
-                <![CDATA[local http = require("socket.http")
-local str
-
-
-local temp_salon = calaos:getInputValue("input_4")
-local temp_rpi = calaos:getInputValue("input_40")
-local temp_ext = calaos:getInputValue("input_2")
-local humidity = calaos:getInputValue("input_6")
-local pressure = calaos:getInputValue("input_5")
-local heat_state = calaos:getOutputValue("output_0")
-local consigne = calaos:getInputValue("intern_0")
-local temp_emma = calaos:getInputValue("io_8")
-local hum_emma = calaos:getInputValue("io_9")
-
-
-local heat_temp
-
-if heat_state then
-    heat_temp = temp_salon
-else
-    heat_temp = 0
-end
-
-if tarif == "HP" then
-    power_tarif = "power_hp"
-    calaos:setOutputValue("intern_4", "Heures Pleines")
-else
-    power_tarif = "power_hc"
-    calaos:setOutputValue("intern_4", "Heures Creuses")
-end
-
-
-str = "http://192.168.1.98/input/post.json?node=calaos&json={temp_salon:" .. temp_salon .. ",temp_rpi:" .. temp_rpi .. ",temp_ext:" .. temp_ext .. ",pressure:" .. pressure .. ",humidity:" .. humidity .. ",heat_temp:" .. heat_temp .. ",consigne:" .. consigne .. ",temp_emma:" .. temp_emma .. ",hum_emma:" .. hum_emma .. "}&apikey=b03593141081cc43dd6832e0bb7ef5ca"
-
-http.request(str)
-
 return true]]>
 </calaos:script>
         </calaos:action>
@@ -309,23 +260,23 @@ return true]]>
             <calaos:output id="output_4" val="false" />
         </calaos:action>
     </calaos:rule>
-    <calaos:rule name="chauffage on (copy)" specialType="" type="Bar">
-        <calaos:condition type="standard" trigger="false">
+    <calaos:rule name="chauffage on" specialType="" type="Bar">
+        <calaos:condition type="standard" trigger="true">
             <calaos:input id="input_4" oper="INF=" val="" val_var="intern_0" />
         </calaos:condition>
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_18" oper="==" val="true" />
+            <calaos:input id="intern_3" oper="==" val="false" />
         </calaos:condition>
         <calaos:action type="standard">
             <calaos:output id="output_0" val="true" />
         </calaos:action>
     </calaos:rule>
-    <calaos:rule name="chauffage off (copy)" specialType="" type="Bar">
-        <calaos:condition type="standard" trigger="false">
+    <calaos:rule name="chauffage off" specialType="" type="Bar">
+        <calaos:condition type="standard" trigger="true">
             <calaos:input id="input_4" oper="SUP" val="" val_var="intern_0" />
         </calaos:condition>
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_18" oper="==" val="true" />
+            <calaos:input id="intern_3" oper="==" val="false" />
         </calaos:condition>
         <calaos:action type="standard">
             <calaos:output id="output_0" val="false" />

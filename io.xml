@@ -2,7 +2,7 @@
 <calaos:ioconfig xmlns:calaos="http://www.calaos.fr">
     <calaos:home>
         <calaos:room name="Bar" type="cuisine" hits="0">
-            <calaos:input chauffage_id="0" enabled="true" gtype="temp" gui_type="temp" host="10.0.0.123" id="input_4" interval="60" io_type="input" logged="true" name="Température Bar" ow_args="" ow_id="28-000004b491a6" port="502" type="OWTemp" use_w1="true" var="0" visible="true" />
+            <calaos:input chauffage_id="0" enabled="true" gtype="temp" gui_type="temp" host="10.0.0.123" id="input_4" interval="600" io_type="input" logged="true" name="Température Bar" ow_args="" ow_id="28-000004b491a6" port="502" precision="2" type="OWTemp" use_w1="true" var="0" visible="true" />
             <calaos:input enabled="true" gui_type="time_range" host="10.0.0.123" id="input_3" io_type="input" months="111111111111" name="Plages horraire chauffage" port="502" type="InPlageHoraire" var="0" visible="false">
                 <calaos:lundi>
                     <calaos:plage start_type="0" start_hour="5" start_min="30" start_sec="0" end_type="0" end_hour="10" end_min="30" end_sec="0" />
