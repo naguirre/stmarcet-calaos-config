@@ -31,7 +31,7 @@ zigbee2mqtt/0x00158d00022887e1 => sensor balcon
 # Chambre de Lison
 0x0017880100e1340b => lumiére chambre de Lison
 0x00178801040839c3 => interrupteur Lison
-
+0x00158d0001fd8d82 => Sensor Lison
 
 # Chambre d'Emma
 0x00124b000338764c => lumiére chambre d'Emma
