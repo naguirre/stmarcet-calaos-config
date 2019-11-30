@@ -31,6 +31,9 @@
         <calaos:action type="standard">
             <calaos:output id="io_30" val="off" />
         </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="intern_5" val="0" />
+        </calaos:action>
     </calaos:rule>
     <calaos:rule name="Plages horraire chauffage jour" specialType="" type="Bar">
         <calaos:condition type="standard" trigger="true">
@@ -97,24 +100,62 @@
     </calaos:rule>
     <calaos:rule name="chauffage on" specialType="" type="Bar">
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_4" oper="INF=" val="" val_var="intern_0" />
+            <calaos:input id="intern_3" oper="==" val="false" />
         </calaos:condition>
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="intern_3" oper="==" val="false" />
+            <calaos:input id="io_3" oper="INF" val="" val_var="intern_0" />
         </calaos:condition>
         <calaos:action type="standard">
             <calaos:output id="output_0" val="true" />
         </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="io_2" val="true" />
+        </calaos:action>
     </calaos:rule>
     <calaos:rule name="chauffage off" specialType="" type="Bar">
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="input_4" oper="SUP" val="" val_var="intern_0" />
+            <calaos:input id="intern_3" oper="==" val="false" />
         </calaos:condition>
         <calaos:condition type="standard" trigger="true">
-            <calaos:input id="intern_3" oper="==" val="false" />
+            <calaos:input id="io_3" oper="SUP=" val="" val_var="intern_0" />
         </calaos:condition>
         <calaos:action type="standard">
             <calaos:output id="output_0" val="false" />
+        </calaos:action>
+        <calaos:action type="standard">
+            <calaos:output id="io_2" val="false" />
+        </calaos:action>
+    </calaos:rule>
+    <calaos:rule name="Hue remote UP" type="Chambre de Lison">
+        <calaos:condition type="standard" trigger="true">
+            <calaos:input id="io_28" oper="==" val="true" />
+        </calaos:condition>
+        <calaos:action type="script">
+            <calaos:script type="lua">
+                <![CDATA[print("Lison light")
+
+cnt = calaos:getInputValue("intern_5")
+
+if cnt == 0 then
+  calaos:setOutputValue("io_30", "set 1")
+elseif cnt == 1 then
+  calaos:setOutputValue("io_30", "set 25")
+elseif cnt == 2 then
+  calaos:setOutputValue("io_30", "set 50")
+elseif cnt == 3 then
+  calaos:setOutputValue("io_30", "set 100")
+else
+  calaos:setOutputValue("v", "false")
+end
+
+cnt = cnt + 1
+if cnt > 3 then
+    cnt = 0
+end
+calaos:setOutputValue("intern_5", cnt)
+return true
+]]>
+</calaos:script>
         </calaos:action>
     </calaos:rule>
 </calaos:rules>
