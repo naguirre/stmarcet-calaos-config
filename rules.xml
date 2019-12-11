@@ -35,7 +35,7 @@
             <calaos:output id="intern_5" val="0" />
         </calaos:action>
     </calaos:rule>
-    <calaos:rule name="Plages horraire chauffage jour" specialType="" type="Bar">
+    <calaos:rule name="Plages horraire chauffage jour" specialType="" type="Cuisine">
         <calaos:condition type="standard" trigger="true">
             <calaos:input id="input_3" oper="==" val="true" />
         </calaos:condition>
@@ -46,7 +46,7 @@
             <calaos:output id="intern_0" val="" val_var="intern_1" />
         </calaos:action>
     </calaos:rule>
-    <calaos:rule name="Plages horraire chauffage nuit" specialType="" type="Bar">
+    <calaos:rule name="Plages horraire chauffage nuit" specialType="" type="Cuisine">
         <calaos:condition type="standard" trigger="true">
             <calaos:input id="input_3" oper="==" val="false" />
         </calaos:condition>
@@ -57,7 +57,7 @@
             <calaos:output id="intern_0" val="" val_var="intern_2" />
         </calaos:action>
     </calaos:rule>
-    <calaos:rule name="Changement consigne jour" specialType="" type="Bar">
+    <calaos:rule name="Changement consigne jour" specialType="" type="Cuisine">
         <calaos:condition type="standard" trigger="true">
             <calaos:input id="input_3" oper="==" val="true" />
         </calaos:condition>
@@ -71,7 +71,7 @@
             <calaos:output id="intern_0" val="" val_var="intern_1" />
         </calaos:action>
     </calaos:rule>
-    <calaos:rule name="Changement consigne nuit" specialType="" type="Bar">
+    <calaos:rule name="Changement consigne nuit" specialType="" type="Cuisine">
         <calaos:condition type="standard" trigger="true">
             <calaos:input id="input_3" oper="==" val="false" />
         </calaos:condition>
@@ -85,7 +85,7 @@
             <calaos:output id="intern_0" val="" val_var="intern_2" />
         </calaos:action>
     </calaos:rule>
-    <calaos:rule name="Depart en vacances" specialType="" type="Bar">
+    <calaos:rule name="Depart en vacances" specialType="" type="Cuisine">
         <calaos:condition type="standard" trigger="true">
             <calaos:input id="intern_3" oper="==" val="true" />
         </calaos:condition>
@@ -93,12 +93,12 @@
             <calaos:output id="intern_0" val="6" />
         </calaos:action>
     </calaos:rule>
-    <calaos:rule name="Retour Vacances" specialType="" type="Bar">
+    <calaos:rule name="Retour Vacances" specialType="" type="Cuisine">
         <calaos:condition type="standard" trigger="true">
             <calaos:input id="intern_0" oper="==" val="" val_var="intern_2" />
         </calaos:condition>
     </calaos:rule>
-    <calaos:rule name="chauffage on" specialType="" type="Bar">
+    <calaos:rule name="chauffage on" specialType="" type="Cuisine">
         <calaos:condition type="standard" trigger="true">
             <calaos:input id="intern_3" oper="==" val="false" />
         </calaos:condition>
@@ -112,7 +112,7 @@
             <calaos:output id="io_2" val="true" />
         </calaos:action>
     </calaos:rule>
-    <calaos:rule name="chauffage off" specialType="" type="Bar">
+    <calaos:rule name="chauffage off" specialType="" type="Cuisine">
         <calaos:condition type="standard" trigger="true">
             <calaos:input id="intern_3" oper="==" val="false" />
         </calaos:condition>

@@ -43,9 +43,9 @@
                     <calaos:plage start_type="0" start_hour="7" start_min="0" start_sec="0" end_type="0" end_hour="23" end_min="0" end_sec="0" />
                 </calaos:dimanche>
             </calaos:input>
-            <calaos:internal chauffage_id="0" enabled="true" gui_type="var_int" id="intern_0" io_type="inout" name="Consigne" rw="true" save="true" type="InternalInt" value="19" visible="true" />
+            <calaos:internal chauffage_id="0" enabled="true" gui_type="var_int" id="intern_0" io_type="inout" name="Consigne" rw="true" save="true" type="InternalInt" value="17" visible="true" />
             <calaos:internal enabled="true" gui_type="var_int" id="intern_1" io_type="inout" name="Consigne Jour" rw="true" save="true" type="InternalInt" value="19" visible="true" />
-            <calaos:internal enabled="true" gui_type="var_int" id="intern_2" io_type="inout" name="Consigne Nuit" rw="true" save="true" type="InternalInt" value="19" visible="true" />
+            <calaos:internal enabled="true" gui_type="var_int" id="intern_2" io_type="inout" name="Consigne Nuit" rw="true" save="true" type="InternalInt" value="17" visible="true" />
             <calaos:internal enabled="true" gui_type="var_bool" id="intern_3" io_type="inout" name="Départ en Vacances" rw="true" save="true" type="InternalBool" value="false" visible="true" />
             <calaos:input coeff_a="1" enabled="true" gui_type="temp" host="192.168.1.12" id="io_14" io_type="input" keepalive="120" name="T° Frigo" password="g4prpd3" path="temperature" port="1883" precision="1" topic_sub="zigbee2mqtt/0x00158d0002fb495f" type="MqttInputTemp" user="nico" visible="true" />
             <calaos:input enabled="true" gui_type="analog_in" host="192.168.1.12" id="io_15" io_style="humidity" io_type="input" keepalive="120" name="Humidité Frigo" password="g4prpd3" path="humidity" port="1883" topic_sub="zigbee2mqtt/0x00158d0002fb495f" type="MqttInputAnalog" unit="%" user="nico" visible="true" />
